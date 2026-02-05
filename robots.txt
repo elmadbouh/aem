@@ -1,0 +1,14 @@
+# Robots.txt for aem-sys.com
+# AI Consulting - Adil El Madbouh
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.aem-sys.com/sitemap.xml
+
+# Crawl-delay (optional, for polite crawling)
+Crawl-delay: 1
+
+# Block common non-content paths (if any exist)
+Disallow: /assets/sass/

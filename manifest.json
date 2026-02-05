@@ -1,0 +1,21 @@
+{
+    "name": "AEM - AI Consulting",
+    "short_name": "AEM",
+    "description": "KI-Beratung und AI Implementation für den deutschen Mittelstand",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#f8f6f3",
+    "theme_color": "#8b7355",
+    "icons": [
+        {
+            "src": "images/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "images/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
