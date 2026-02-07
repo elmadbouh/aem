@@ -56,6 +56,14 @@
         .footer-copy{color:var(--muted);font-size:0.85rem}
         .footer-links a{color:var(--text2);text-decoration:none;margin-left:24px;font-size:0.9rem}
         .footer-links a:hover{color:var(--warm)}
+        .lang-switch{background:var(--accent);border:1px solid var(--border);padding:6px 12px;border-radius:6px;font-size:0.85rem;cursor:pointer;font-weight:500;color:var(--text2);transition:all 0.2s}
+        .lang-switch:hover{background:var(--border)}
+        .mobile-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+        [data-lang="en"]{display:none}
+        body.en [data-lang="de"]{display:none}
+        body.en [data-lang="en"]{display:block}
+        body.en span[data-lang="en"],body.en a[data-lang="en"]{display:inline}
+        span[data-lang="en"],a[data-lang="en"]{display:none}
         @media(max-width:768px){
             .nav-links{display:none}
             .blog-card{grid-template-columns:1fr}
@@ -66,7 +74,7 @@
     </style>
 </head>
 <body>
-    <nav><div class="nav-inner"><a href="/" class="logo"><span class="logo-box">AI</span>AEM</a><ul class="nav-links"><li><a href="/#services">Leistungen</a></li><li><a href="/blog/">Blog</a></li><li><a href="/#about">Über mich</a></li><li><a href="https://calendly.com/elmadbouh/30min" class="nav-cta">Kostenloses Gespräch</a></li></ul></div></nav>
+    <nav><div class="nav-inner"><a href="../" class="logo"><span class="logo-box">AI</span>AEM</a><ul class="nav-links"><li><a href="../#services"><span data-lang="en">Services</span><span data-lang="de">Leistungen</span></a></li><li><a href="../#process"><span data-lang="en">Process</span><span data-lang="de">Ablauf</span></a></li><li><a href="../#about"><span data-lang="en">About</span><span data-lang="de">Über mich</span></a></li><li><a href="./"><span data-lang="en">Blog</span><span data-lang="de">Blog</span></a></li><li><button class="lang-switch" onclick="toggleLang()"><span data-lang="en">DE</span><span data-lang="de">EN</span></button></li><li><a href="https://calendly.com/elmadbouh/30min" class="nav-cta"><span data-lang="en">Book a Free Call</span><span data-lang="de">Kostenloses Gespräch</span></a></li></ul><button class="mobile-toggle"></button></div></nav>
 
     <header class="blog-header">
         <div class="container">
@@ -82,7 +90,7 @@
                 <div class="blog-card-image">🚀</div>
                 <div class="blog-card-content">
                     <span class="blog-card-tag">Praxis</span>
-                    <h2><a href="/blog/ki-fuer-selbststaendige-10-beispiele.html">KI für Selbstständige: 10 Wege, wie du sofort Zeit sparst</a></h2>
+                    <h2><a href="ki-fuer-selbststaendige-10-beispiele.html">KI für Selbstständige: 10 Wege, wie du sofort Zeit sparst</a></h2>
                     <p>10 praktische KI-Anwendungen für Selbstständige und Freelancer. Von E-Mail-Management bis Content-Erstellung – spare bis zu 18 Stunden pro Woche.</p>
                     <div class="blog-card-meta">
                         <span><i class="fas fa-calendar"></i> 7. Feb 2026</span>
@@ -95,7 +103,7 @@
                 <div class="blog-card-image">🔒</div>
                 <div class="blog-card-content">
                     <span class="blog-card-tag">Sicherheit</span>
-                    <h2><a href="/blog/chatgpt-vs-lokale-ki-sicherheit.html">ChatGPT vs. Lokale KI: Was ist sicherer für deine Daten?</a></h2>
+                    <h2><a href="chatgpt-vs-lokale-ki-sicherheit.html">ChatGPT vs. Lokale KI: Was ist sicherer für deine Daten?</a></h2>
                     <p>Cloud oder lokal? Vergleiche ChatGPT und lokale KI-Lösungen hinsichtlich Datenschutz, DSGVO und Sicherheit. Mit klarer Empfehlung.</p>
                     <div class="blog-card-meta">
                         <span><i class="fas fa-calendar"></i> 7. Feb 2026</span>
@@ -108,7 +116,7 @@
                 <div class="blog-card-image">🤖</div>
                 <div class="blog-card-content">
                     <span class="blog-card-tag">Grundlagen</span>
-                    <h2><a href="/blog/was-ist-ein-ki-assistent.html">Was ist ein KI-Assistent? Einfach erklärt für Einsteiger</a></h2>
+                    <h2><a href="was-ist-ein-ki-assistent.html">Was ist ein KI-Assistent? Einfach erklärt für Einsteiger</a></h2>
                     <p>Was ist ein KI-Assistent und wie kann er dir helfen? Alles über AI Assistenten, ihre Vorteile und wie du bis zu 80% deiner Routinearbeit automatisieren kannst.</p>
                     <div class="blog-card-meta">
                         <span><i class="fas fa-calendar"></i> 7. Feb 2026</span>
@@ -124,10 +132,14 @@
         <div class="footer-inner">
             <p class="footer-copy">© 2026 Adil El Madbouh. Alle Rechte vorbehalten.</p>
             <div class="footer-links">
-                <a href="/impressum.html">Impressum</a>
-                <a href="/datenschutz.html">Datenschutz</a>
+                <a href="../impressum.html">Impressum</a>
+                <a href="../datenschutz.html">Datenschutz</a>
             </div>
         </div>
     </footer>
+    <script>
+    function toggleLang(){document.body.classList.toggle('en');localStorage.setItem('lang',document.body.classList.contains('en')?'en':'de');document.documentElement.lang=document.body.classList.contains('en')?'en':'de'}
+    if(localStorage.getItem('lang')==='en'){document.body.classList.add('en');document.documentElement.lang='en'}
+    </script>
 </body>
 </html>
